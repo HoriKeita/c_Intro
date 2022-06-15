@@ -176,3 +176,62 @@ int main(void)
 ```
 
 完成したら担当の先輩に提出してください.
+
+## 追加課題
+*  課題本文は [`プログラミング練習配列.pdf`](プログラミング練習配列.pdf)
+*  応用問題の参考動画は[`【大学数学】線形代数入門②(行列)【線形代数】`](https://youtu.be/ltFl0FpLTzQ)
+*  プログラム例1
+```c
+// 4人の学生の3科目のテスト結果を表示 
+#include <stdio.h>
+int main(void)
+{
+int tensu1[4][3] = {{ 91, 63, 78}, { 67, 72, 46}, { 89, 34, 53}, { 32, 54, 34} }; 
+int tensu2[4][3] = { { 97, 67, 82}, { 73, 43, 46}, { 97, 56, 21}, { 85, 46, 35} } ;
+​
+//1回目の点数を表示
+puts("1回目の点数"); 
+for ( int i = 0; i < 4; i++)		//4人分の
+{
+for ( int j = 0; j < 3; j++)		//3科目の
+printf("%4d", tensu1[i][j]);		//点数を表示
+putchar ('\n'); 
+}
+​
+//2回目の点数を表示
+puts("2回目の点数"); 
+for ( int i = 0; i < 4; i++)
+{
+for ( int j = 0; j < 3; j++)
+printf ("%4d", tensu2[i][j]); 
+putchar ('\n'); 
+}
+​
+return 0;
+}
+```
+* プログラム例2
+```c
+// 学生の点数を読み込んで合計点と平均点を表示（人数をマクロで定義） 
+#include <stdio.h>
+#define NUMBER 5	//学生の人数
+int main(void)
+{
+ int tensu[NUMBER];	//学生の点数
+ int sum = 0;		//合計点
+​
+ printf("%d人の点数を入力せよ。\n", NUMBER); 
+ for ( int i = 0; i < NUMBER; i++)
+ {
+  printf("%2d番：", i + 1);
+  scanf("%d",&tensu[i]);
+  sum += tensu[i]; 
+ }
+ printf ("合計点：%5d\n", sum);
+ printf ("平均点：%5.1f\n", (double) sum / NUMBER); 
+ return 0;
+}
+```
+
+*  提出は不要です.
+
